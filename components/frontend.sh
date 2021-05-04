@@ -35,6 +35,3 @@ STAT $?
 HEAD "run npm start"
 npm start
 STAT $?
-
-npm install
-npm run build
