@@ -6,7 +6,7 @@ LOG=/tmp/${COMPONENT}.log
 rm -r $LOG
 OS_PREREQ(){
   set-hostname component/$COMPONENT
-  Head " Updating the repos"
+  Head " Updating the repos "
   apt update &>$LOG
   }
 ERROR(){
