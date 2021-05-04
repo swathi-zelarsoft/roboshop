@@ -15,6 +15,7 @@ ERROR(){
   echo -e "\e[1;31m$1\e[0m"
 }
 DOWNLOAD_COMPONENT()
-{Head"Downloading ${COMPONENT} component"
+{
+  Head "Downloading ${COMPONENT} component"
 git clone "https://github.com/zelar-soft-todoapp/${COMPONENT}.git"
 }
