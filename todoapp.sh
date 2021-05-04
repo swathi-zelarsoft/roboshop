@@ -3,7 +3,7 @@
 COMPONENT=$1
 source components/common.sh
 
-if (! -f components/${COMPONENT}.sh ); then
+if [! -f components/${COMPONENT}.sh ]; then
   echo -e "\e[31mInvalid component name\e[0m"
   exit 1
   fi
