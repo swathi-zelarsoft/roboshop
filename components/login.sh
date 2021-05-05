@@ -15,7 +15,9 @@ mkdir /go && cd /go && mkdir src && cd src
 HEAD "Clone code from github"
 DOWNLOAD_COMPONENT
 STAT $?
-
+cd ${COMPONENT}
+Head "Export go path in directory"
+export GOPATH=/go
 HEAD "Build"
 go get
 go build >>"${LOG}"
