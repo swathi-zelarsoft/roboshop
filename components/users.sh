@@ -6,14 +6,14 @@ Head "Set hostname and update repo"
 OS_PREREQ
 
 Head "install java 8 version"
-apt-get install openjdk-8-jdk >>"${LOG}"
+apt-get install openjdk-8-jdk &>>"${LOG}"
 STAT $?
 Head "check java version"
 java -version
 STAT $?
 
 Head "Install maven"
-apt install maven -y >>$LOG
+apt install maven -y &>>$LOG
 STAT $?
 
 DOWNLOAD_COMPONENT

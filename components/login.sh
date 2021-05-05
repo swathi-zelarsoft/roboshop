@@ -26,7 +26,7 @@ go get github.com/openzipkin/zipkin-go
 go get github.com/openzipkin/zipkin-go/middleware/http
 go get  github.com/openzipkin/zipkin-go/reporter/http
 Head "Build"
-go build >>"${LOG}"
+go build &>>"${LOG}"
 STAT $?
 
 Head "Create login service file"
