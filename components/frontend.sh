@@ -20,11 +20,11 @@ Head "Run build"
 npm run build &>>${LOG}
 STAT $?
 Head "Change root path in nginx"
-sed 's/html/&/frontend/dist' /etc/nginx/sites-available/default || exit
+sed 's/html/&/frontend/dist' /etc/nginx/sites-available/default
 STAT $?
 Head "Update index.js File With Todo & Login Ip"
 cd /var/www/html/frontend && cd config || exit
-vi index.js
+vi default
 STAT $?
 Head "Restart Nginx"
 systemctl restart nginx
