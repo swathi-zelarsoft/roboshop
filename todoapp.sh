@@ -16,4 +16,4 @@ if [ "${USER_NAME}" != "root" ]; then
 fi
 
 export COMPONENT
-bash components/${COMPONENT}.sh
+bash -x components/${COMPONENT}.sh
