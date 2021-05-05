@@ -6,7 +6,7 @@ Head "Set hostname and update repo"
 OS_PREREQ
 
 Head "install java 8 version"
-apt-get install openjdk-8-jdk &>>"${LOG}"
+apt-get install openjdk-8-jdk -y &>>"${LOG}"
 STAT $?
 Head "check java version"
 java -version
