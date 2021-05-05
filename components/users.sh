@@ -4,17 +4,17 @@ source components/common.sh
 
 Head "Set hostname and update repo"
 OS_PREREQ
+
+Head "Check java version and install java 8 version"
+apt-get remove openjdk-11-jdk-headless >>$LOG
+apt-get install openjdk-8-jdk >>"${LOG}"
 STAT $?
 
 Head "Install maven"
 apt install maven -y >>$LOG
 STAT $?
 
-Head "Check java version and install java 8 version"
-java -version || exit
-apt-get remove openjdk-11-jdk-headless >>$LOG
-apt-get install openjdk-8-jdk >>"${LOG}"
-STAT $?
+
 
 DOWNLOAD_COMPONENT
 STAT $?
