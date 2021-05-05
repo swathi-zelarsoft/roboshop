@@ -11,7 +11,7 @@ apt install maven -y >>$LOG
 STAT $?
 
 Head "Check java version and install java 8 version"
-java -version
+java -version || exit
 apt-get remove openjdk-11-jdk-headless >>$LOG
 apt-get install openjdk-8-jdk >>"${LOG}"
 STAT $?
