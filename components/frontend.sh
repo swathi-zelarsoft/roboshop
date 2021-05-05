@@ -25,7 +25,7 @@ cd /etc/nginx/sites-available || exit
 vi default
 STAT $?
 HEAD "Update index.js File With Todo & Login Ip"
-cd /var/www/html/todo/frontend && cd config || exit
+cd /var/www/html/frontend && cd config || exit
 vi index.js
 STAT $?
 HEAD "Restart Nginx"
