@@ -16,7 +16,7 @@ HEAD "Install Npm"
 npm install >>"${LOG}"
 STAT $?
 HEAD "Run build"
-npm run build >>"${LOG}"
+npm run build >>${LOG}
 killall node >>"${LOG}"
 npm run build
 STAT $?
