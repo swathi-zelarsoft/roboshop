@@ -1,11 +1,10 @@
 #!/bin/bash
 LOG=/tmp/${COMPONENT}.log
-rm -r $LOG
+rm -r ${LOG}
 Head(){
   echo -e "\e[36m  ============ $1 ===========\e[0m"
-  echo -e "\e[36m  ============ $1 ===========\e[0m" >>$LOG
-}
-
+  echo -e "\e[36m  ============ $1 ===========\e[0m" >>${LOG}
+  }
 OS_PREREQ(){
   set-hostname component/${COMPONENT}
   Head " Updating the repos "
