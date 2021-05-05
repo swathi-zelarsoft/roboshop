@@ -26,4 +26,5 @@ ERROR(){
 DOWNLOAD_COMPONENT(){
   Head "Downloading ${COMPONENT} component"
 git clone "https://github.com/zelar-soft-todoapp/${COMPONENT}.git"
+ cd ${COMPONENT}
 }
