@@ -4,8 +4,7 @@ source components/common.sh
 
 Head "Set hostname and update repo"
 OS_PREREQ
-Head "Remove Java-11 version"
-apt-get remove openjdk-11-jdk-headless -y &>>$LOG
+
 STAT $?
 Head "install java 8 version"
 apt-get install openjdk-8-jdk -y &>>${LOG}
