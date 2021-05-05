@@ -5,24 +5,22 @@ OS_PREREQ
 Head "Installing Nginx"
 apt install nginx -y &>>"$LOG"
 systemctl start nginx
+STAT $?
 Head "Installing npm"
 apt install npm -y &>>$LOG
-
+STAT $?
 Head "Downloading git file"
 cd /var/www/html
+
 DOWNLOAD_COMPONENT
-cd ${COMPONENT}
 Head "Install Npm"
-npm install >>"${LOG}"
+npm install &>>"${LOG}"
 STAT $?
 Head "Run build"
-npm run build >>${LOG}
-killall node >>"${LOG}"
-npm run build
+npm run build &>>${LOG}
 STAT $?
 Head "Change root path in nginx"
-cd /etc/nginx/sites-available || exit
-vi default
+cd /etc/nginx/sites-available && vi default
 STAT $?
 Head "Update index.js File With Todo & Login Ip"
 cd /var/www/html/frontend && cd config || exit
