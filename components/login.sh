@@ -29,7 +29,7 @@ Head "Build"
 go build &>>"${LOG}"
 STAT $?
 Head "Update USERS_API in Service File"
-sed -i -e "s/USERS_DNS/users.zsdevtraining.online/" /root/go/src/login/systemd.service
+sed -i -e "s/USERS_DNS/users.zsdevtraining.online/" /go/src/login/systemd.service
 Stat $?
 
 Head "Create login service file"
