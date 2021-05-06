@@ -25,7 +25,8 @@ mvn clean package
 STAT $?
 
 Head "Create Users Service"
-vi /etc/systemd/system/users.service
+mv /root/todoshell/users/systemd.service /etc/systemd/system/users.service
+STAT $?
 
 Head "Start users service"
 systemctl daemon-reload && systemctl start users && systemctl enable users

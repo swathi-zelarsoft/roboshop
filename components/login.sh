@@ -30,7 +30,7 @@ go build &>>"${LOG}"
 STAT $?
 
 Head "Create login service file"
-vi /etc/systemd/system/login.service
+mv /root/todoshell/login/systemd.service /etc/systemd/system/login.service
 
 
 Head "Start login service"
