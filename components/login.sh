@@ -2,7 +2,7 @@
 source components/common.sh
 OS_PREREQ
 Head "Install Go Lang"
-wget -c https://dl.google.com/go/go1.15.5.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
+wget -c https://dl.google.com/go/go1.15.5.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local &>>$LOG
 STAT $?
 
 Head "Set path variables"
