@@ -4,14 +4,14 @@ source components/common.sh
 
 Head "Set hostname and update repo"
 OS_PREREQ
-
 STAT $?
+Head "check java version"
+java -version
 Head "install java 8 version"
 apt-get install openjdk-8-jdk -y &>>${LOG}
 STAT $?
 Head "check java version"
 java -version
-STAT $?
 
 Head "Install maven"
 apt install maven -y &>>$LOG
