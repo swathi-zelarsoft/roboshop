@@ -2,7 +2,7 @@
 source components/common.sh
 OS_PREREQ
 Head "Install Go Lang"
-apt  install golang-go &>>$LOG
+apt  install golang-go -y &>>$LOG
 STAT $?
 DOWNLOAD_COMPONENT
 STAT $?
