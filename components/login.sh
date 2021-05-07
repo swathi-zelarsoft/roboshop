@@ -18,11 +18,11 @@ Head "Build"
 go build &>>"${LOG}"
 STAT $?
 Head "Update USERS_API in Service File"
-sed -i -e "s/USERSDNS/users.zsdevtraining.online/" /root/login/systemd.service
+sed -i -e "s/USERSDNS/users.zsdevtraining.online/" /root/todoshell/login/systemd.service
 Stat $?
 
 Head "Create login service file"
-mv /root/login/systemd.service /etc/systemd/system/login.service
+mv /root/todoshell/login/systemd.service /etc/systemd/system/login.service
 
 Head "Start login service"
 systemctl daemon-reload && systemctl start login && systemctl status login
