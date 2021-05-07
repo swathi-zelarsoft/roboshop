@@ -1,8 +1,6 @@
 #!/bin/bash
 
 source components/common.sh
-
-Head "Set hostname and update repo"
 OS_PREREQ
 STAT $?
 Head "check java version"
