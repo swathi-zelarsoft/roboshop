@@ -2,22 +2,11 @@
 source components/common.sh
 OS_PREREQ
 Head "Install Go Lang"
-wget -c https://dl.google.com/go/go1.15.5.linux-amd64.tar.gz -O -| sudo tar -xz -C /usr/local
+apt  install golang-go
 STAT $?
-
-Head "Set path variables"
-export PATH=$PATH:/usr/local/go/bin
-source ~/.profile
-go version
-STAT $?
-
-Head "Make directory"
-mkdir -p /go && cd /go && mkdir src && cd src
-
 DOWNLOAD_COMPONENT
 STAT $?
 Head "Export go path in directory"
-export GOPATH=/go
 go get github.com/dgrijalva/jwt-go
 go get github.com/labstack/echo
 go get github.com/labstack/echo/middleware
