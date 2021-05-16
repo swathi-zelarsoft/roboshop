@@ -18,6 +18,7 @@ npm install &>>"${LOG}"
 STAT $?
 Head "Run build"
 npm run build &>>${LOG}
+npm install --save-dev node-sass &>>$LOG
 STAT $?
 Head "Change root path in nginx"
 sed -i -e 's+/var/www/html+/var/www/html/frontend/dist+g' /etc/nginx/sites-available/default
