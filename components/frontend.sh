@@ -28,7 +28,7 @@ systemctl restart nginx
 STAT $?
 
 Head "Create login service file"
-mv /root/todoshell/frontend/systemd.service /etc/systemd/system/frontend.service
+mv /root/var/www/html/frontend/systemd.service /etc/systemd/system/frontend.service
 STAT $?
 Head "Start the frontend service"
 systemctl daemon-reload && systemctl start frontend && systemctl status frontend
