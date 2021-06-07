@@ -23,13 +23,12 @@ STAT $?
 Head "Change root path in nginx"
 sed -i -e 's+/var/www/html+/var/www/html/frontend/dist+g' /etc/nginx/sites-available/default
 STAT $?
-Head "Now export login and todo Ip's"
-export AUTH_API_ADDRESS=http://login.zsdevtraining.online:8080
-export TODOS_API_ADDRESS=http://todo.zsdevtraining.online:8080
-STAT $?
 Head "Restart Nginx"
 systemctl restart nginx
 STAT $?
-Head "run npm start"
+
+Head "Create login service file"
+mv /root/todoshell/frontend/systemd.service /etc/systemd/system/frontend.service
+Head "Start the frontend service"
 npm start
 STAT $?
