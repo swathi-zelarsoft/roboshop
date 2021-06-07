@@ -17,9 +17,6 @@ go get  github.com/openzipkin/zipkin-go/reporter/http
 Head "Build"
 go build &>>"${LOG}"
 STAT $?
-Head "Update USERS_API in Service File"
-sed -i -e "s/USERSDNS/users.zsdevtraining.online/" /root/todoshell/login/systemd.service
-Stat $?
 
 Head "Create login service file"
 mv /root/todoshell/login/systemd.service /etc/systemd/system/login.service
