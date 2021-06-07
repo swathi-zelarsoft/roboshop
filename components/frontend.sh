@@ -27,7 +27,7 @@ Head "Restart Nginx"
 systemctl restart nginx
 STAT $?
 
-Head "Create login service file"
+Head "Create frontend service file"
 mv /var/www/html/frontend/systemd.service /etc/systemd/system/frontend.service
 STAT $?
 Head "Start the frontend service"
