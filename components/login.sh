@@ -17,7 +17,6 @@ go get  github.com/openzipkin/zipkin-go/reporter/http
 Head "Build"
 go build &>>"${LOG}"
 STAT $?
-
 Head "Create login service file"
 mv /root/todoshell/login/systemd.service /etc/systemd/system/login.service
 
