@@ -14,11 +14,10 @@ cd /var/www/html
 
 DOWNLOAD_COMPONENT
 Head "Install Npm"
-npm install &>>"${LOG}"
+npm install --save-dev node-sass &>>$LOG
 STAT $?
 Head "Run build"
 npm run build &>>${LOG}
-npm install --save-dev node-sass &>>$LOG
 STAT $?
 Head "Remove default files"
 rm -rf /var/www/html/index.debian.html /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
