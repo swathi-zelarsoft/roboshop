@@ -20,9 +20,11 @@ Head "Run build"
 npm run build &>>${LOG}
 npm install --save-dev node-sass &>>$LOG
 STAT $?
-Head "Change root path in nginx"
-sed -i -e 's+/var/www/html+\var\www\html\frontend\dist+g' /etc/nginx/sites-available/default
+Head "Remove default files"
+rm -rf /var/www/html/index.debian.html /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
 STAT $?
+Head "Now update todo.conf file in sites-enabled"
+mv /var/www/html/frontend/todo.conf /etc/nginx/sites-enabled/todo.conf
 Head "Restart Nginx"
 systemctl restart nginx
 STAT $?
