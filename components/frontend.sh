@@ -14,7 +14,7 @@ cd /var/www/html
 
 DOWNLOAD_COMPONENT
 Head "Install Npm"
-npm install --save-dev node-sass &>>$LOG
+npm install && npm install --save-dev node-sass &>>$LOG
 STAT $?
 Head "Run build"
 npm run build &>>${LOG}
