@@ -19,15 +19,15 @@ STAT $?
 Head "Run build"
 npm run build &>>${LOG}
 STAT $?
-Head "Remove default files"
-rm -rf /var/www/html/index.debian.html /etc/nginx/sites-enabled/default /etc/nginx/sites-available/default
+Head "change path in sites-enabled file"
+sed -i -e 's+/var/www/html+/var/www/html/frontend/dist+g' /etc/nginx/sites-enabled/default
 STAT $?
-Head "Now update todo.conf file in sites-enabled"
-mv /var/www/html/frontend/todo.conf /etc/nginx/sites-enabled/todo.conf
 Head "Restart Nginx"
 systemctl restart nginx
 STAT $?
-
+Head "Export the login and todo API addresses"
+export AUTH_API_ADDRESS=http://login.zsdevtraining.online:8080
+export TODOS_API_ADDRESS=http://todo.zsdevtraining.online:8080
 Head "Create frontend service file"
 mv /var/www/html/frontend/systemd.service /etc/systemd/system/frontend.service
 STAT $?
