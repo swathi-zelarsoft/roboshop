@@ -25,9 +25,6 @@ STAT $?
 Head "Restart Nginx"
 systemctl restart nginx
 STAT $?
-Head "Export the login and todo API addresses"
-export AUTH_API_ADDRESS=http://login.zsdevtraining.online:8080
-export TODOS_API_ADDRESS=http://todo.zsdevtraining.online:8080
 Head "Create frontend service file"
 mv /var/www/html/frontend/systemd.service /etc/systemd/system/frontend.service
 STAT $?
