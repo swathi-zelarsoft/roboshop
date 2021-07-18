@@ -28,7 +28,7 @@ Instance_Create() {
 }
 
 if [ "$1" == "all" ]; then
-  for instance in frontend login todo users ; do
+  for instance in frontend login todo users redis ; do
     Instance_Create $instance
   done
 else
